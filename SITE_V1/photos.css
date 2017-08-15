@@ -1,0 +1,105 @@
+/*
+	Fichier : index.css;
+	Projet:	Site Suzanne Michaud;
+	Auteur: Nathan ARAGO;
+	Date Creation: 	11/05/2017;
+*/
+
+@font-face{
+	font-family : "Police1";
+	src : url('polices/AUBREY.TTF');
+}
+
+@font-face{
+	font-family : "Police2";
+	src : url('polices/Blkchanr.ttf')
+}
+
+body{
+	font-family :  "Police1", "Police2";
+	background-color : #F7F7F7;
+	margin: -1px; /* Retrait des marges entre le body et corps. */
+}
+
+#maPage{
+	
+	display : block; 
+	margin : auto;
+	max-width : 100%;
+	height : 100%;
+	background-color : #FFF;
+	-webkit-box-shadow: 0px 32px 46px -25px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 32px 46px -25px rgba(0,0,0,0.75);
+	box-shadow: 0px 32px 46px -25px rgba(0,0,0,0.75);
+}
+
+
+a{
+	text-decoration: none;
+	color : #000
+}
+
+
+#corps {
+	display : block;
+	margin : auto;
+	margin-top : 50px;
+	text-align: center;
+}
+
+#corps header{
+	display: block;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+#corps header h1{
+	font-size : 34px;
+}
+
+#corps .conteneur_photo{
+	display: inline-block;
+	height: 310px;
+	width: 520px;
+	margin-top :30px;
+	margin-bottom :30px;
+	margin-left: 20px;
+	margin-right: 20px;
+	line-height: 310px;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.75);
+		box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.75);
+}
+
+#corps .conteneur_photo img{
+	vertical-align: middle;
+	width: 105%;
+}
+
+
+/* PORTABLE RESPONSIVE */ 
+
+
+@media screen and (max-width : 540px){
+	
+	#corps .conteneur_photo{
+		display: inline-block;
+		height: 170px;
+		width: 310px;
+		margin-top :30px;
+		margin-bottom :30px;
+		margin-left: 5px;
+		margin-right: 5px;
+		line-height: 170px;
+	}
+}
+
+@media screen and (max-width : 706px){
+	
+	
+	#corps header h1{
+		font-size: 28px;		
+	}
+}
