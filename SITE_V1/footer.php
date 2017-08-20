@@ -8,8 +8,13 @@
 	</head>
 	<body>
 		<footer>
-			<a class="FacebookLink" href="https://www.facebook.com/Le-temps-dun-ongle-644561435750224/?ref=br_rs" target="_blank"><img src="images/facebook_icon.png" alt="bouttonFacebook"/></a>
-			<a class="InstagrammeLink" href="https://www.instagram.com/letempsdunongle/" target="_blank"><img src="images/instagramme_icon.png" alt="bouttonInstagramme"/></a>
+			<a class="FacebookLink" href="https://www.facebook.com/Le-temps-dun-ongle-644561435750224/?ref=br_rs" target="_blank" title="Ma page Facebook"><img src="images/facebook_icon.png" alt="bouttonFacebook"/></a>
+			<a class="InstagrammeLink" href="https://www.instagram.com/letempsdunongle/" target="_blank" title="Mon Instagram"><img src="images/instagramme_icon.png" alt="bouttonInstagramme"/></a>
+			<!--
+			<div>Icons made by <a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+			-->		
+			<br />
+			<a class="OptionGear" href="zone_admin.php"><img src="images/gear-black-shape.png" alt="ZoneAdministrateur" title="Zone Administrateur" /></a>
 		</footer>
 	</body>
-</html>
+</html
