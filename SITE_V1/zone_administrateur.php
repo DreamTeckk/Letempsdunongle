@@ -8,6 +8,11 @@
 	</head>
 	<body>
 		<?php include('header.php'); ?>
+		<h1>Connexion Administrateur</h1>
+		<h4>Attention :
+			<br />
+			Cette page permet uniquement aux administrateurs de se connecter.
+		</h4>  
 		<div class="loginForm">
 			<form method="post" action="connexion.php">
 				<p>

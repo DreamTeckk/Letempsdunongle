@@ -59,12 +59,38 @@ a{
 	font-size : 34px;
 }
 
-.bande_attention{
-	display : block;
-	margin : auto;
-	height : 50px;
-	width : 100%;
-	background-image : url('images/dangerBande.png');
+.tarif_container{
+	display: block;
+	margin: auto;
+	border-bottom: solid black 2px;
+	width: 70%;
+}
+
+.tarif{
+	font-size: 32px;
+	display: inline-block;
+	margin: auto;
+	text-align: center;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.remove_button,.edit_button{
+	width: 32px;
+	height: 100%;
+	position: relative;
+	left: 20px;
+	top: 4px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.add_button{
+	display: block;
+	margin: auto;
+	height: 100%;
+	width: 32px;
+	margin-top: 40px;
 }
 
 #corps h2{

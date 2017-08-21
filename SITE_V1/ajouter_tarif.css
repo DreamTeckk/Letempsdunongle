@@ -1,11 +1,5 @@
-h1,h4{
+h1,form{
 	text-align: center;
-}
-
-.auth_error{
-	color: red;
-	font-family: 'Arial';
-	font-size: 12px;
 }
 
 form{
@@ -17,12 +11,18 @@ form{
 	text-align: center;
 }
 
+.error{
+	font-family: 'Arial';
+	color: red;
+	font-size: 12px;
+}
+
 form input{
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-form input[type="text"],input[type="password"]{
+form input[type="text"]{
 	border-bottom: solid rgba(231,190,130,0.5) 2px;
 }
 
