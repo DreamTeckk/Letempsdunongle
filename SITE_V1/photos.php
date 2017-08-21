@@ -4,6 +4,10 @@
 	Auteur: Nathan ARAGO;
 	Date Creation: 	12/05/2017;
 -->
+<?php
+	session_start();
+?>
+
 <!doctype html>
 <html lang="fr">
 	<head>

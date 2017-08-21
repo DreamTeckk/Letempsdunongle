@@ -5,9 +5,40 @@
 	Date Creation: 	04/08/2017;
 */
 
+@font-face{
+	font-family : "Police1";
+	src : url('polices/AUBREY.TTF');
+}
+
+@font-face{
+	font-family : "Police2";
+	src : url('polices/Blkchanr.ttf')
+}
+
+
+body{
+	font-family: 'Police1','Police2';
+}
+
+
+.logOut{
+	display:  block;
+	position: absolute;
+	top: 30px;
+	right: 10px;
+	padding-right: 10px;
+	text-decoration: underline;
+	font-family: 'Arial';
+}
+
+.logOut:hover{
+	color: #2043bf;
+}
+
 header .logo{
-	padding: 20px;
 	display: block;
+	margin: auto;
+	width: 300px;
 	text-align : center;
 }
 

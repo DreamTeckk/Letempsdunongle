@@ -4,7 +4,9 @@
 	Auteur: Nathan ARAGO;
 	Date Creation: 	11/05/2017;
 -->
-
+<?php
+	session_start();
+?>
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -19,6 +21,13 @@
 			<?php include("header.php"); ?>
 			<div id ="corps">
 				<header>
+					<?php
+						if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
+							echo '<h3>Bonjour '.$_SESSION['pseudo'].' !</h3>';
+						}else if(isset($_GET['logout']) == true){
+							echo '<h5 class="logout_alert">Vous avez bien été déconnecté !</h5>';
+						}
+					?>
 					<h1>Bienvenue sur l'Accueil.<h1>
 				</header>
 				<div id = "sur_slider"></div>

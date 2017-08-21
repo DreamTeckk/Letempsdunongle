@@ -15,6 +15,11 @@
 	src : url('polices/Blkchanr.ttf')
 }
 
+.logout_alert{
+	color: #37c66c;
+	font-family: 'Arial';
+}
+
 body{
 	font-family :  "Police1", "Police2";
 	background-color : #F7F7F7;
