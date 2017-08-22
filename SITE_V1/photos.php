@@ -34,15 +34,6 @@
 				<header>
 					<h1>Photos<h1>
 				</header>
-				<div class = "conteneur_photo">
-					<a target="_blank" class="fancybox" rel="group" href="images/FullSizeRender(1).jpg"><img src="images/FullSizeRender(1).jpg" alt="" /></a>
-				</div>
-				<div class = "conteneur_photo">
-					<a target="_blank" class="fancybox" rel="group" href="images/FullSizeRender_2.jpg"><img src="images/FullSizeRender_2.jpg" alt="" /></a>
-				</div>
-				<div class = "conteneur_photo">
-					<a target="_blank" class="fancybox" rel="group" href="images/IMG_90148_2.JPG"><img src="images/IMG_90148_2.JPG" alt=""/></a>
-				</div>
 				<?php include("footer.php"); ?>
 			</div>
 		</div>

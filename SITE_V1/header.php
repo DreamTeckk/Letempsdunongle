@@ -16,7 +16,7 @@
 				<?php
 			}
 			?>
-			<a class = "logo" href="index.php"><img src="images/logotextV4.png" alt="logo" height="250px" width="250px"/></a>
+			<a class = "logo" href="index.php"><img src="icons/logotextV4.png" alt="logo" height="250px" width="250px"/></a>
 			<nav class = "menu_mobil">
 				<input type="checkbox" id="menu" value="checkbox1"><label for="menu"></label>
 				<ol>
