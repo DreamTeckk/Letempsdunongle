@@ -33,12 +33,10 @@ body{
 	box-shadow: 0px 32px 46px -25px rgba(0,0,0,0.75);
 }
 
-
 a{
 	text-decoration: none;
 	color : #000
 }
-
 
 #corps {
 	display : block;
@@ -56,46 +54,91 @@ a{
 
 #corps header h1{
 	font-size : 34px;
+	margin-bottom: -30px; 
 }
 
-#corps .conteneur_photo{
+
+.box_photo{
 	display: inline-block;
-	height: 310px;
-	width: 520px;
-	margin-top :30px;
-	margin-bottom :30px;
-	margin-left: 20px;
-	margin-right: 20px;
-	line-height: 310px;
+	border: solid black 3px;
+	border-radius: 10px;
 	overflow: hidden;
-	-webkit-box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.75);
-		-moz-box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.75);
-		box-shadow: 0px 21px 30px 6px rgba(0,0,0,0.75);
+	height: 250px;
+	margin: auto;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	margin-top: 2px;
+	background-color: rgb(0,0,0);
 }
 
-#corps .conteneur_photo img{
-	vertical-align: middle;
-	width: 105%;
+.box_photo .lien_photo{
+	opacity: 0.7;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
 }
 
+.box_photo .remove_button{
+	display: block;
+	position: absolute;
+	z-index: 10;
+	opacity: 0.5;
+}
+
+.date_ajout_photo{
+	font-family: 'Police1','Police2';
+	opacity: 0;
+	color: #000;
+	font-size: 12px;
+	display: block;
+	position: relative;
+	z-index: 15;
+	top: 240px;
+	margin: -7.7px;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+}
+
+.box_photo img{
+	margin: 0px;
+}
+
+.box_photo .remove_button:hover{
+	opacity: 1;
+}
+
+.box_photo:hover .lien_photo{
+	opacity: 1;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+}
+
+.box_photo:hover .date_ajout_photo{
+	opacity: 1;
+	background-color: rgba(255,255,255,0.5);
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+}
+
+.add_button{
+	display: inline-block;
+	position: relative;
+	margin: auto;
+	margin-top: 30px;
+	top: -58px;
+	height: 100%;
+	width: 128px;
+}
 
 /* PORTABLE RESPONSIVE */ 
 
 
 @media screen and (max-width : 540px){
-	
-	#corps .conteneur_photo{
-		display: inline-block;
-		height: 170px;
-		width: 310px;
-		margin-top :30px;
-		margin-bottom :30px;
-		margin-left: 5px;
-		margin-right: 5px;
-		line-height: 170px;
-	}
 }
-
 @media screen and (max-width : 706px){
 	
 	

@@ -44,7 +44,7 @@
 								<input type="text" name="nom_tarif" id="nom_tarif" value="<?php echo $donnees['nom_tarif']; ?>" required="true"/><br />
 								<label for="prix_tarif">Prix du tarif (en &#8364) :</label>
 								<input type="text" name="prix_tarif" id="prix_tarif" value="<?php echo $donnees['prix_tarif']; ?>" required="true"/><br />
-								<input type="submit" value="Ajouter">
+								<input type="submit" value="Modifier">
 							</p>
 						</form>
 						<?php

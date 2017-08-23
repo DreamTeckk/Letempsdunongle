@@ -34,6 +34,96 @@
 				<header>
 					<h1>Photos<h1>
 				</header>
+				<!-- AFFICHAGE DES PHOTOS DEPUIS LA BDD -->
+				<?php
+
+					try{
+						$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
+					}catch(Exception $e){
+						die('Error :'.$e->getMessage());
+					}
+
+					$requete = $bdd->query('SELECT id,adresse,DATE_FORMAT(date_ajout,\'%d-%m-%y\') AS date_ajout FROM image ORDER BY id');
+
+					//On vérifie que l'utilisateur soit connecté et possède donc une session.
+					if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
+							
+						//Affichage si l'utilisateur est un administrateur.
+						if($_SESSION['rang'] == 'administrateur'){
+
+							while($donnees = $requete->fetch()){
+								$image_source = imagecreatefromjpeg($donnees['adresse']);
+								$hauteur_miniature = 250;
+								$largeur_miniature;
+
+								if((imagesy($image_source)/imagesx($image_source))>=1){
+									$largeur_miniature = $hauteur_miniature /(imagesy($image_source)/imagesx($image_source));
+								}else{
+									$largeur_miniature = $hauteur_miniature / (imagesy($image_source)/imagesx($image_source));
+								}
+
+									?>
+									<div class="box_photo">
+										<a class="remove_button" href="supprimer_photo.php?id_photo=<?php echo $donnees['id']?>"><img src="icons/remove.png"/></a>
+										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?>
+										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"></p><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+									</div>
+									<?php
+							}
+							?>
+							<a class="add_button" href="ajouter_photo.php"><img src="icons/add128.png" alt="bouton ajouter" title="Ajouter tarif"/></a>
+							<?php
+
+						//Affichage si l'utilisateur n'est pas un administrateur.
+						}else{
+
+							while($donnees = $requete->fetch()){
+								$image_source = imagecreatefromjpeg($donnees['adresse']);
+								$hauteur_miniature = 250;
+								$largeur_miniature;
+
+								if((imagesy($image_source)/imagesx($image_source))>=1){
+									$largeur_miniature = $hauteur_miniature /(imagesy($image_source)/imagesx($image_source));
+								}else{
+									$largeur_miniature = $hauteur_miniature / (imagesy($image_source)/imagesx($image_source));
+								}
+
+								?>
+								<div class="box_photo">
+										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?>
+										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"></p><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+								</div>
+								<?php
+							}
+
+						}
+					//Affichage si le visiteur n'est pas connecté.
+					}else{
+
+						while($donnees = $requete->fetch()){
+							$image_source = imagecreatefromjpeg($donnees['adresse']);
+							$hauteur_miniature = 250;
+							$largeur_miniature;
+
+							if((imagesy($image_source)/imagesx($image_source))>=1){
+									$largeur_miniature = $hauteur_miniature /(imagesy($image_source)/imagesx($image_source));
+							}else{
+								$largeur_miniature = $hauteur_miniature / (imagesy($image_source)/imagesx($image_source));
+							}
+
+							?>
+							<div class="box_photo">
+								<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?>
+								<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"></p><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+							</div>
+							<?php
+						}
+					}
+
+					$requete->closeCursor();
+
+				?>
+				<!-- FIN AFFICHAGE DES PHOTOS -->
 				<?php include("footer.php"); ?>
 			</div>
 		</div>
