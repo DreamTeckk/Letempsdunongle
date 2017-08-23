@@ -65,8 +65,8 @@
 									?>
 									<div class="box_photo">
 										<a class="remove_button" href="supprimer_photo.php?id_photo=<?php echo $donnees['id']?>"><img src="icons/remove.png"/></a>
-										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?>
-										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"></p><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?></p>
+										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
 									</div>
 									<?php
 							}
@@ -90,8 +90,8 @@
 
 								?>
 								<div class="box_photo">
-										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?>
-										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"></p><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?></p>
+										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
 								</div>
 								<?php
 							}
@@ -113,8 +113,8 @@
 
 							?>
 							<div class="box_photo">
-								<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?>
-								<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"></p><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+								<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?></p>
+								<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
 							</div>
 							<?php
 						}
