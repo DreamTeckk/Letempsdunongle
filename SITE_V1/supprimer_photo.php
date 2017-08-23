@@ -20,7 +20,7 @@
 				$donnees = $requete->fetch();
 				if($donnees){
 
-					$dossier = opendir('images/');	
+					$dossier = opendir('gallery_uploads/');	
 					unlink($donnees['adresse']);
 					closedir($dossier);
 
