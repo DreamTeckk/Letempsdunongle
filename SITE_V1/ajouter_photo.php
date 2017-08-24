@@ -34,6 +34,7 @@
 							<label for="nom_tarif">Choisir un fichier :</label>
 							<input type="file" name="fichier_envoye"><br />
 							<p class="allowed">(format autorisés : .jpg .jpeg .JPG)</p><br />
+							<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
 							<input type="submit" value="Ajouter">
 						</p>
 					</form>
