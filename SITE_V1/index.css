@@ -64,18 +64,11 @@ a{
 	font-size : 34px;
 }
 
-
-#sur_slider{
-	display: block;
-	position: absolute;
-	z-index: 2000;
-	left: 25.5%;
-	width: 49.1%;
-	height: 384px;
-	-webkit-box-shadow: inset 0px 0px 55px 60px rgba(0,0,0,0.75);
-	-moz-box-shadow: inset 0px 0px 55px 60px rgba(0,0,0,0.75);
-	box-shadow: inset 0px 0px 55px 60px rgba(0,0,0,0.75);
+.success{
+	font-family: 'Arial';
+	color: green;
 }
+
 
 .slider{
 	display : block;
@@ -90,6 +83,21 @@ a{
 	margin-right : 10px;
 }
 
+.box_photo{
+	position: relative;
+}
+
+.box_photo .remove_button{
+	display: inline-block;
+	position: absolute;
+	left: calc(50% - 16px);
+	height: 32px;
+	opacity: 0.5;
+}
+
+.box_photo .remove_button:hover{
+	opacity: 1;
+}
 
 /* MOBILE RESPOSIVE */
 

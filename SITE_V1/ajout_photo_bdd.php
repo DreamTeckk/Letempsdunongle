@@ -7,12 +7,13 @@
 		//On regarde si l'utilisateur est un administrateur.
 		if($_SESSION['rang'] == 'administrateur'){
 
-			$nomFichier = $_FILES['fichier_envoye']['name'];
+			$nomFichier = md5($_FILES['fichier_envoye']['name']);
 			$tailleFichier = $_FILES['fichier_envoye']['size'];
 			$infoFichier = pathinfo($_FILES['fichier_envoye']['name']);
 			$extensionFichier = $infoFichier['extension'];
 			$extensionValide = array('jpg','jpeg','JPG','png');
 			$nomFinalFichier = ''.$nomFichier.'.'.$extensionFichier.'';
+			$chemin = 'gallery_uploads/'.$nomFinalFichier;
 
 			//Verification que taille du fichier <= 10Mo. 
 			if($tailleFichier <= 10000000){
@@ -23,7 +24,7 @@
 					ini_set('upload-max-filesize', '10000000');
 					ini_set('post_max_size', '10000000');
 
-					move_uploaded_file($_FILES['fichier_envoye']['tmp_name'],'gallery_uploads/'.$nomFinalFichier);		
+					move_uploaded_file($_FILES['fichier_envoye']['tmp_name'],$chemin);		
 
 					try{
 						$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
@@ -35,7 +36,7 @@
 					$requete = $bdd->prepare('INSERT INTO image(adresse,date_ajout) VALUES(:adresse,NOW())');
 					$requete->execute(array(
 						'adresse'=>'gallery_uploads/'.$nomFinalFichier
-						));
+					));
 					$requete->closeCursor();
 
 					header('Location: photos.php');

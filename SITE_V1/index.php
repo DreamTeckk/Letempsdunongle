@@ -29,6 +29,24 @@
 						}
 					?>
 					<h1>Bienvenue sur l'Accueil.<h1>
+					<?php 
+					if(isset($_GET['picture_removed_fromSlide'])  AND ($_GET['picture_removed_fromSlide'] == true)){
+									
+						if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
+							
+							if($_SESSION['rang'] == 'administrateur'){
+
+								echo '<h4 class="success">L\'image a bien été retirée.</h4>';
+
+							}else{
+								header('Location: acces_page_interdit.php');
+							}
+
+						}else{
+							header('Location: acces_page_interdit.php');
+						}
+					}
+					?>
 				</header>
 				<div id = "sur_slider"></div>
 				<div class="slider">
@@ -40,7 +58,7 @@
 						die('Error :'.$e->getMessage());
 					}
 
-					$requete = $bdd->query('SELECT id,adresse,DATE_FORMAT(date_ajout,\'%d-%m-%y\') AS date_ajout FROM image ORDER BY id');
+					$requete = $bdd->query('SELECT id,adresse,DATE_FORMAT(date_ajout,\'%d-%m-%y\') AS date_ajout FROM image WHERE presence_slider=1 ORDER BY id');
 					while($donnees = $requete->fetch()){
 						$image_source = imagecreatefromjpeg($donnees['adresse']);
 						$hauteur_miniature = 384;
@@ -51,12 +69,29 @@
 						}else{
 							$largeur_miniature = $hauteur_miniature / (imagesy($image_source)/imagesx($image_source));
 						}
-
-						?>
-						<div class="box_photo">
-							<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
-						</div>
-						<?php
+						if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
+							
+							if($_SESSION['rang'] == 'administrateur'){
+								?>
+								<div class="box_photo">
+									<a class="remove_button" href="supprimer_photo_slider.php?id_image=<?php echo $donnees['id']; ?>"><img src="icons/remove.png" title="supprimer l'image" /></a>
+									<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+								</div>
+								<?php
+							}else{
+								?>
+								<div class="box_photo">
+									<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+								</div>
+								<?php
+							}
+						}else{
+							?>
+							<div class="box_photo">
+								<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+							</div>
+							<?php
+						}
 					}
 					$requete->closeCursor();
 

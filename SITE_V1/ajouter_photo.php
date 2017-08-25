@@ -27,13 +27,16 @@
 									}
 								}elseif (isset($_GET['extension_error'])) {
 									if($_GET['extension_error']){
-										echo '<p class="error">L\'extension de l\'image n\'est pas prise en charge.</p>';
+										echo '<p class="error">L\'extension de l\'image n\'est pas valide.</p>';
 									}
 								}
 							?>
 							<label for="nom_tarif">Choisir un fichier :</label>
 							<input type="file" name="fichier_envoye"><br />
-							<p class="allowed">(format autorisés : .jpg .jpeg .JPG)</p><br />
+							
+							<p class="allowed">Taille Max : 10Mo<br />
+							(format autorisés : .jpg .jpeg .JPG .png)</p><br />
+
 							<input type="hidden" name="MAX_FILE_SIZE" value="10000000">
 							<input type="submit" value="Ajouter">
 						</p>

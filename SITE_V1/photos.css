@@ -57,9 +57,15 @@ a{
 	margin-bottom: -30px; 
 }
 
+.success{
+	font-family: 'Arial';
+	color: green;
+}
+
 
 .box_photo{
 	display: inline-block;
+	position: relative;
 	border: solid black 3px;
 	border-radius: 10px;
 	overflow: hidden;
@@ -79,21 +85,31 @@ a{
 	-moz-transition: all 0.5s ease;
 }
 
-.box_photo .remove_button{
-	display: block;
+.box_photo .remove_button,.addToSlide_button{
+	display: inline-block;
 	position: absolute;
+	left: 5px;
+	height: 32px;
 	z-index: 10;
 	opacity: 0.5;
 }
 
+.box_photo .addToSlide_button{
+	top: 8px;
+}
+
+.box_photo .remove_button{
+	top: 56px;
+}
+
 .date_ajout_photo{
+	display: block;
+	position: relative;
+	z-index: 15;
 	font-family: 'Police1','Police2';
 	opacity: 0;
 	color: #000;
 	font-size: 12px;
-	display: block;
-	position: relative;
-	z-index: 15;
 	top: 240px;
 	margin: -7.7px;
 	transition: all 0.5s ease;
@@ -103,6 +119,10 @@ a{
 
 .box_photo img{
 	margin: 0px;
+}
+
+.box_photo .addToSlide_button:hover{
+	opacity: 1;
 }
 
 .box_photo .remove_button:hover{

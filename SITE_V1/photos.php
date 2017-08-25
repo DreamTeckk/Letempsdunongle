@@ -51,6 +51,10 @@
 						//Affichage si l'utilisateur est un administrateur.
 						if($_SESSION['rang'] == 'administrateur'){
 
+							if(isset($_GET['picture_added_toSlide']) && ($_GET['picture_added_toSlide'] == true)){
+								echo '<h4 class="success">L\'image a bien été ajoutée au slider.</h4>';
+							}
+
 							while($donnees = $requete->fetch()){
 								$image_source = imagecreatefromjpeg($donnees['adresse']);
 								$hauteur_miniature = 250;
@@ -64,14 +68,15 @@
 
 									?>
 									<div class="box_photo">
-										<a class="remove_button" href="supprimer_photo.php?id_photo=<?php echo $donnees['id']?>"><img src="icons/remove.png"/></a>
+										<a class="remove_button" href="supprimer_photo.php?id_image=<?php echo $donnees['id']?>"><img src="icons/remove.png" title="supprimer l'image" /></a>
+										<a class="addToSlide_button" href="ajout_photo_slider.php?id_image=<?php echo $donnees['id']?>"><img src="icons/addToSlide.png" title="ajouter l'image au slider" /></a>
 										<p class="date_ajout_photo">Ajoutee le <?php echo $donnees['date_ajout']; ?></p>
-										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
+										<a class="lien_photo" href="<?php echo $donnees['adresse']; ?>" target="_blank"><img class="photo" src="<?php echo $donnees['adresse']; ?>" title="cliquez pour agrandir l'image" height="<?php echo $hauteur_miniature; ?>" width="<?php echo $largeur_miniature ?>"/></a>
 									</div>
 									<?php
 							}
 							?>
-							<a class="add_button" href="ajouter_photo.php"><img src="icons/add128.png" alt="bouton ajouter" title="Ajouter tarif"/></a>
+							<a class="add_button" href="ajouter_photo.php"><img src="icons/add128.png" alt="bouton ajouter" title="Ajouter une image"/></a>
 							<?php
 
 						//Affichage si l'utilisateur n'est pas un administrateur.
