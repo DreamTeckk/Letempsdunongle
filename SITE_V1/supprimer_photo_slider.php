@@ -2,6 +2,11 @@
 
 	session_start();
 
+	$dbHost = 'localhost';
+	$dbName = 'letempsdunongle';
+	$dbUsername = 'root';
+	$dbPassword = '';
+
 	if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
 							
 		//Affichage si l'utilisateur est un administrateur.
@@ -11,7 +16,7 @@
 
 				try{
 
-					$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
+					$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
 
 				}catch(Exception $e){
 

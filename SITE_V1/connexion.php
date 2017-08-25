@@ -1,8 +1,13 @@
 <?php
+
+	$dbHost = 'localhost';
+	$dbName = 'letempsdunongle';
+	$dbUsername = 'root';
+	$dbPassword = '';
 	
 	//Test du bon déroulement de la connexion à la BDD.
 	try{
-		$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
+		$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
 	}catch(Exception $e){
 		die('Erreur :'.$e.getMessage());
 	}

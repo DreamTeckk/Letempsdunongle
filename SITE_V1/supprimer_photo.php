@@ -1,5 +1,11 @@
 <?php
 	session_start();
+
+	$dbHost = 'localhost';
+	$dbName = 'letempsdunongle';
+	$dbUsername = 'root';
+	$dbPassword = '';
+
 	//On vérifie que l'utilisateur soit connecté et possède donc une session.
 	if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
 							
@@ -9,7 +15,7 @@
 			if(isset($_GET['id_image'])){
 
 				try{
-					$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
+					$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
 				}catch(Exception $e){
 					die('Error :'.$e->getMessage());
 				}

@@ -6,6 +6,12 @@
 -->
 <?php
 	session_start();
+
+	$dbHost = 'localhost';
+	$dbName = 'letempsdunongle';
+	$dbUsername = 'root';
+	$dbPassword = '';
+
 ?>
 
 <!doctype html>
@@ -38,7 +44,7 @@
 				<?php
 
 					try{
-						$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
+						$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
 					}catch(Exception $e){
 						die('Error :'.$e->getMessage());
 					}

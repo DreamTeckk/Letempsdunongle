@@ -1,5 +1,10 @@
 <?php 
 	session_start();
+
+	$dbHost = 'localhost';
+	$dbName = 'letempsdunongle';
+	$dbUsername = 'root';
+	$dbPassword = '';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,7 +24,7 @@
 				if($_SESSION['rang'] == 'administrateur'){
 
 					try{
-						$bdd = new PDO('mysql:host=localhost;dbname=letempsdunongle','root','');
+						$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
 					}catch(Exception $e){
 						die('Error :'.$e->getMessage());
 					}
