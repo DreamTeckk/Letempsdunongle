@@ -1,17 +1,7 @@
 <?php
 
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
+	include('connexion_bdd.php');
 	
-	//Test du bon déroulement de la connexion à la BDD.
-	try{
-		$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-	}catch(Exception $e){
-		die('Erreur :'.$e.getMessage());
-	}
-
 	$pseudo = htmlspecialchars($_POST['pseudo']);	//Mise en variable du pseudo entré dans le formulaire.
 	$mdp = htmlspecialchars($_POST['passw']);	//Mise en variable du mot de passe entré dans le formulaire.
 	$loginSucces = false;	//Booléen verifant la reussite de connexion. 

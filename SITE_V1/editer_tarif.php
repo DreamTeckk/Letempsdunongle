@@ -1,10 +1,6 @@
 <?php 
 	session_start();
 
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,11 +19,7 @@
 				//On regarde si l'utilisateur est un administrateur.
 				if($_SESSION['rang'] == 'administrateur'){
 
-					try{
-						$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-					}catch(Exception $e){
-						die('Error :'.$e->getMessage());
-					}
+					include('connexion_bdd.php');
 
 					$requete = $bdd->prepare('SELECT * FROM tarif WHERE id_tarif=:id');
 					$requete->execute(array(

@@ -1,11 +1,6 @@
 <?php
 	session_start();
 
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
-
 	//On vérifie que l'utilisateur soit connecté et possède donc une session.
 	if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
 							
@@ -19,11 +14,7 @@
 				header('Location: ajouter_tarif.php?price_error=true');
 			}else{
 
-				try{
-					$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-				}catch(Exception $e){
-					die('Error: '.$e->getMessage());
-				}
+				include('connexion_bdd.php');
 
 				$requete = $bdd->prepare('INSERT INTO tarif(nom_tarif,prix_tarif) VALUES(:nom,:prix)');
 				$requete->execute(array(

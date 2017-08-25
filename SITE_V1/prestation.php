@@ -6,11 +6,6 @@
 -->
 <?php
 	session_start();
-
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
 ?>
 
 
@@ -30,11 +25,7 @@
 				</header>
 				<?php
 
-					try{
-						$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-					}catch(Exception $e){
-						die('Error :'.$e->getMessage());
-					}
+					include('connexion_bdd.php');
 
 					$requete = $bdd->query('SELECT * FROM tarif ORDER BY id_tarif');
 
@@ -48,7 +39,7 @@
 								?>
 								<div class="tarif_container">
 								<?php
-									echo '<p class="tarif">'.$donnees['nom_tarif'].'&nbsp&nbsp:&nbsp&nbsp&nbsp'.$donnees['prix_tarif'].'&#8364.</p>'; ?>
+									echo '<p class="tarif">'.$donnees['nom_tarif'].'&nbsp&nbsp:&nbsp&nbsp&nbsp'.$donnees['prix_tarif'].'&#8364</p>'; ?>
 									<a class="edit_button" href="editer_tarif.php?id_tarif=<?php echo $donnees['id_tarif'];?>"><img src="icons/edit.png" alt="bouton supprimer" title="Editer tarif"/></a>
 									<a class="remove_button" href="supprimer_tarif.php?id_tarif=<?php echo $donnees['id_tarif'];?>"><img src="icons/remove.png" alt="bouton supprimer" title="Supprimer tarif"/></a>
 								</div>

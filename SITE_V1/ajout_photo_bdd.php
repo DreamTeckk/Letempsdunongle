@@ -1,11 +1,6 @@
 <?php
 	session_start();
 
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
-
 	//On vérifie que l'utilisateur soit connecté et possède donc une session.
 	if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
 							
@@ -29,19 +24,12 @@
 					ini_set('upload-max-filesize', '10000000');
 					ini_set('post_max_size', '10000000');
 
-					move_uploaded_file($_FILES['fichier_envoye']['tmp_name'],$chemin);		
+					move_uploaded_file($_FILES['fichier_envoye']['tmp_name'],$chemin);	
 
-					try{
-						$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-
-					}catch(Exception $e){
-						die('Error :'.$e->getMessage());
-					}
+					include('connexion_bdd.php');	
 
 					$requete = $bdd->prepare('INSERT INTO image(adresse,date_ajout) VALUES(:adresse,NOW())');
-					$requete->execute(array(
-						'adresse'=>'gallery_uploads/'.$nomFinalFichier
-					));
+					$requete->execute(array('adresse'=>'gallery_uploads/'.$nomFinalFichier));
 					$requete->closeCursor();
 
 					header('Location: photos.php');

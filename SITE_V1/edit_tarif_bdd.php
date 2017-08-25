@@ -1,11 +1,6 @@
 <?php
 
 	session_start();
-
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
 	
 	//On vérifie que l'utilisateur soit connecté et possède donc une session.
 	if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
@@ -21,11 +16,7 @@
 				header('Location: editer_tarif.php?price_error=true&id_tarif='.$id_tarif.'');
 			}else{
 
-				try{
-					$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-				}catch(Exception $e){
-					die('Error: '.$e->getMessage());
-				}
+				include('connexion_bdd.php');
 
 				$requete = $bdd->prepare('UPDATE tarif SET nom_tarif=:nom, prix_tarif=:prix WHERE id_tarif=:id');
 				$requete->execute(array(

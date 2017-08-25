@@ -1,11 +1,6 @@
 <?php
 	session_start();
 
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
-
 	if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
 							
 		//Affichage si l'utilisateur est un administrateur.
@@ -13,14 +8,7 @@
 
 			if(isset($_GET['id_image'])){
 
-				try{
-
-					$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-
-				}catch(Exception $e){
-
-						die('Error :'.$e->getMessage());
-				}
+				include('connexion_bdd.php');
 
 				$requete = $bdd->prepare('SELECT * FROM image WHERE id=:id_image');
 				$requete->execute(array('id_image'=>$_GET['id_image']));

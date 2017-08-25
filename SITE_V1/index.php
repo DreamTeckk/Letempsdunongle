@@ -7,10 +7,6 @@
 <?php
 	session_start();
 
-	$dbHost = 'localhost';
-	$dbName = 'letempsdunongle';
-	$dbUsername = 'root';
-	$dbPassword = '';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -57,11 +53,7 @@
 				<div class="slider">
 				<?php
 
-					try{
-						$bdd = new PDO('mysql:host='.$dbHost.';dbname='.$dbName.'',$dbUsername,$dbPassword);
-					}catch(Exception $e){
-						die('Error :'.$e->getMessage());
-					}
+					include('connexion_bdd.php');
 
 					$requete = $bdd->query('SELECT id,adresse,DATE_FORMAT(date_ajout,\'%d-%m-%y\') AS date_ajout FROM image WHERE presence_slider=1 ORDER BY id');
 					while($donnees = $requete->fetch()){
