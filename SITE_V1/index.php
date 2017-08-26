@@ -30,7 +30,8 @@
 						}
 					?>
 					<h1>Bienvenue sur l'Accueil.<h1>
-					<?php 
+				</header>
+				<?php 
 					if(isset($_GET['picture_removed_fromSlide'])  AND ($_GET['picture_removed_fromSlide'] == true)){
 									
 						if(isset($_SESSION['id']) AND isset($_SESSION['pseudo']) AND isset($_SESSION['rang'])){
@@ -47,8 +48,7 @@
 							header('Location: acces_page_interdit.php');
 						}
 					}
-					?>
-				</header>
+				?>
 				<div id = "sur_slider"></div>
 				<div class="slider">
 				<?php

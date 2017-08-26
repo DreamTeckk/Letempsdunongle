@@ -45,18 +45,6 @@ a{
 	text-align: center;
 }
 
-#corps header{
-	display: block;
-	margin: auto;
-	text-align: center;
-	margin-bottom: 100px;
-}
-
-#corps header h1{
-	font-size : 34px;
-	margin-bottom: -30px; 
-}
-
 .success{
 	font-family: 'Arial';
 	color: green;
