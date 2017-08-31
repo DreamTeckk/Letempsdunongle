@@ -15,10 +15,15 @@
 	src : url('polices/Blkchanr.ttf')
 }
 
+.logout_alert{
+	color: #37c66c;
+	font-family: 'Arial';
+}
+
 body{
 	font-family :  "Police1", "Police2";
 	background-color : #F7F7F7;
-	margin: -1px; /* Retrait des marges entre le body et corps. */
+	margin: 0px; /* Retrait des marges entre le body et corps. */
 }
 
 #maPage{
@@ -47,44 +52,41 @@ a{
 	text-align: center;
 }
 
-.tarif_container{
-	display: block;
-	margin: auto;
-	border-bottom: solid black 2px;
-	width: 70%;
+
+.success{
+	font-family: 'Arial';
+	color: green;
 }
 
-.tarif{
-	font-size: 32px;
-	display: inline-block;
-	margin: auto;
-	text-align: center;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+
+.slider{
+	display : block;
+	margin : auto;
+	width : 50%;
+	height : auto;
 }
 
-.remove_button,.edit_button{
-	width: 32px;
-	height: 100%;
+.slider div{
+	display : block;
+	margin-left : 10px;
+	margin-right : 10px;
+}
+
+.box_photo{
 	position: relative;
-	left: 20px;
-	top: 4px;
-	margin-left: 10px;
-	margin-right: 10px;
 }
 
-.add_button{
-	display: block;
-	margin: auto;
-	height: 100%;
-	width: 32px;
-	margin-top: 40px;
+.box_photo .remove_button{
+	display: inline-block;
+	position: absolute;
+	left: calc(50% - 16px);
+	height: 32px;
+	opacity: 0.5;
 }
 
-#corps h2{
-	font-size : 2.5em;
+.box_photo .remove_button:hover{
+	opacity: 1;
 }
-
 
 /* MOBILE RESPOSIVE */
 

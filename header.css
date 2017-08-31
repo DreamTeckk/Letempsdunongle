@@ -40,7 +40,7 @@ header{
 	margin: auto;
 	width: 100%;
 	text-align: center;
-	background-image: url('icons/bgV1.png');
+	background-image: url('Icons/bgV1.png');
 	background-attachment: cover;
 }
  header h1{
@@ -66,7 +66,7 @@ header .logo img{
 }
 
 input[type=checkbox] + label{
-	background: url("icons/menu_icon.png") no-repeat;
+	background: url("Icons/menu_icon.png") no-repeat;
 	background-size: 0%;
 	opacity: 0.7;
 	width: 64px;
