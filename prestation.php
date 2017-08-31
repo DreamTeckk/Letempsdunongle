@@ -40,14 +40,14 @@
 								<div class="tarif_container">
 								<?php
 									echo '<p class="tarif">'.$donnees['nom_tarif'].'&nbsp&nbsp:&nbsp&nbsp&nbsp'.$donnees['prix_tarif'].'&#8364</p>'; ?>
-									<a class="edit_button" href="editer_tarif.php?id_tarif=<?php echo $donnees['id_tarif'];?>"><img src="icons/edit.png" alt="bouton supprimer" title="Editer tarif"/></a>
-									<a class="remove_button" href="supprimer_tarif.php?id_tarif=<?php echo $donnees['id_tarif'];?>"><img src="icons/remove.png" alt="bouton supprimer" title="Supprimer tarif"/></a>
+									<a class="edit_button" href="editer_tarif.php?id_tarif=<?php echo $donnees['id_tarif'];?>"><img src="Icons/edit.png" alt="bouton supprimer" title="Editer tarif"/></a>
+									<a class="remove_button" href="supprimer_tarif.php?id_tarif=<?php echo $donnees['id_tarif'];?>"><img src="Icons/remove.png" alt="bouton supprimer" title="Supprimer tarif"/></a>
 								</div>
 								<?php
 							}
 						?>
 						<br />
-						<a class="add_button" href="ajouter_tarif.php"><img src="icons/add.png" alt="bouton ajouter" title="Ajouter tarif"/></a>
+						<a class="add_button" href="ajouter_tarif.php"><img src="Icons/add.png" alt="bouton ajouter" title="Ajouter tarif"/></a>
 
 						<?php
 
